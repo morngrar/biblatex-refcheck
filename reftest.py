@@ -5,12 +5,10 @@
 Takes bibliography-file as input, reports on stdout if the file looks OK or not, and also provides function check_file() which returns True or False respectively, for use in automation of LaTeX compilation.
 """
 
-import sys
-
-def check_file():
+def check_file(filename):
     i = 0
     fault = False
-    with open(sys.argv[1]) as f:
+    with open(filename) as f:
         for line in f:
             i += 1
             if len(line) > 2:
@@ -26,4 +24,5 @@ def check_file():
             return False
 
 if __name__=="__main__":
-    check_file()
+    import sys
+    check_file(sys.argv[1])
