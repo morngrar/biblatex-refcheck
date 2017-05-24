@@ -10,9 +10,14 @@ def check_file(filename):
     fault = False
     with open(filename) as f:
         for line in f:
+            line = line.partition("%")[0]
+            line = line.strip()
+
             i += 1
             if len(line) > 2:
-                if line[-2] is not ",":
+             #   if line[0] is "%":
+             #       continue
+                if line[-1] is not ",": 
                     print("COMMA-ERROR on LINE {0}!".format(str(i)))
                     fault = True
 
