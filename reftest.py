@@ -18,8 +18,6 @@ def check_file(filename):
 
             i += 1
             if len(line) > 2:
-             #   if line[0] is "%":
-             #       continue
                 if line[-1] is not ",": 
                     print("COMMA-ERROR on LINE {0}!".format(str(i)))
                     fault = True
